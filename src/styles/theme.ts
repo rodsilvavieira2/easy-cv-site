@@ -13,10 +13,18 @@ export const theme = extendTheme({
       primary: "#ffffff",
       secondary: "#A78BFA",
       title: "#8B5CF6",
+      body: "#333",
     },
     shape: {
+      background: "#ffffff",
       gradient:
         "linear-gradient(180deg, rgba(161, 58, 241, 0.65) 0%, rgba(182, 44, 248, 0.704) 100%)",
+    },
+    background: {
+      300: "#F5F5F5",
+    },
+    border: {
+      300: "#ccc",
     },
   },
 
@@ -32,6 +40,7 @@ export const theme = extendTheme({
         w: "100vw",
         h: "100vh",
         overflowX: "hidden",
+        color: "tex.body",
       },
     },
   },

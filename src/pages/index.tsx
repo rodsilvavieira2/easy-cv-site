@@ -168,7 +168,7 @@ export const GetTheAppNowSection: React.FC = () => {
   const [secondary500] = useToken("colors", ["secondary.500"]);
 
   return (
-    <Box as="section" py="44">
+    <Box as="section" py="44" mb="28 !important">
       <Flex minH="17rem" bg="shape.gradient">
         <Flex
           position="relative"

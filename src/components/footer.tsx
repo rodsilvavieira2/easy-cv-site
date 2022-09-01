@@ -32,7 +32,7 @@ function makeLink({
       href={href}
       textTransform="capitalize"
       color="text.primary"
-      fontSize="sm"
+      fontSize="md"
     >
       {label}
     </ChakraLink>
@@ -58,24 +58,24 @@ interface NavFooterProps {
 
 const NavFooter: React.FC<NavFooterProps> = ({ links, title }) => {
   return (
-    <Stack spacing={2}>
+    <Stack spacing={3}>
       <Heading
         as="h3"
         color="text.primary"
-        fontSize="md"
+        fontSize="lg"
         textTransform="uppercase"
       >
         {title}
       </Heading>
 
-      <List>{withId(links).map(makeLink)}</List>
+      <List spacing="4">{withId(links).map(makeLink)}</List>
     </Stack>
   );
 };
 
 export const Footer: React.FC = () => {
   return (
-    <Flex mt="32" bg="shape.gradient" as="footer" h="27rem" py="10">
+    <Flex bg="shape.gradient" as="footer" h="27rem" py="10">
       <Flex
         w="full"
         maxW="95%"
@@ -84,7 +84,7 @@ export const Footer: React.FC = () => {
         flexDir="column"
         justifyContent="space-between"
       >
-        <HStack spacing="9" alignItems="start">
+        <HStack spacing="28" alignItems="start">
           <NavFooter
             title="easy resume"
             links={[
