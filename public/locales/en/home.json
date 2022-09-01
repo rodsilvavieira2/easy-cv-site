@@ -1,0 +1,35 @@
+{
+  "title":"Easy Resume",
+  "welcomeSection": {
+    "h1": "Make resumes quickly and easily With Easy Resume",
+    "h2": "With easy resume you can create resumes that can expose all your qualities in an elegant and modern way",
+    "button": "download"
+  },
+  "benefitsSection": {
+    "cards": {
+      "colors": {
+        "title": "colors",
+        "description": "Get access to a wide range of colors."
+      },
+      "theme": {
+        "title": "themes",
+        "description": "Have a wide range of themes that meet your needs."
+      },
+      "fontSize": {
+        "title": "Font Size",
+        "description": "Control the font size."
+      },
+      "lineHeight": {
+        "title": "Line Height",
+        "description": "Control the line height"
+      }
+    }
+  },
+  "getTheAppNowSection": {
+    "h2":"Get the app now!",
+    "button": {
+      "text1": "get it on",
+      "text2": "googlePlay"
+    }
+  }
+}

@@ -13,50 +13,6 @@ import {
   Center,
   Divider,
 } from "@chakra-ui/react";
-import { withId } from "@helpers";
-
-const pageLinks = withId([
-  {
-    label: "information collection and Use",
-    href: "#information-collection-and-us",
-  },
-  {
-    label: "third party services",
-    href: "#third-party-services",
-  },
-  {
-    label: "log data",
-    href: "#log-data",
-  },
-  {
-    label: "cookies",
-    href: "#cookies",
-  },
-  {
-    label: "service providers",
-    href: "#service-providers",
-  },
-  {
-    label: "security",
-    href: "#security",
-  },
-  {
-    label: "links to other sites",
-    href: "#links-to-other-sites",
-  },
-  {
-    label: "changes",
-    href: "#changes",
-  },
-  {
-    label: "children’s privacy",
-    href: "#children-privacy",
-  },
-  {
-    label: "contact us",
-    href: "#contact-us",
-  },
-]);
 
 const Terms: NextPage = () => {
   return (

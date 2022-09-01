@@ -1,0 +1,11 @@
+{
+  "title": "Contact us | Easy Resume",
+  "contact": {
+    "h2": "Contact Us",
+    "p": "Have questions? The quickest way to get in touch with us is using the contact information below."
+  },
+  "email": {
+    "h1": "Email",
+    "link": "Send us a feedback using your email"
+  }
+}

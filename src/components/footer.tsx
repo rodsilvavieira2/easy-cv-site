@@ -103,10 +103,6 @@ export const Footer: React.FC = () => {
             title="more"
             links={[
               {
-                href: "/help",
-                label: "help",
-              },
-              {
                 href: "/terms",
                 label: "terms",
               },

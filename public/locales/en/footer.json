@@ -1,0 +1,18 @@
+{
+  "app": {
+    "title": "easy resume",
+    "links": {
+      "about": "about",
+      "what": "what we offer"
+    }
+  },
+  "more": {
+    "title": "more",
+    "links": {
+      "terms": "terms",
+      "privacy": "privacy",
+      "contact": "contact us",
+      "developer": "developer"
+    }
+  }
+}
