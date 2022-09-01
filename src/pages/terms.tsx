@@ -67,14 +67,14 @@ const Terms: NextPage = () => {
 
       <Flex flex={1} bg="background.300" pb="32">
         <Stack
-          w={["full", "full", "80%", "70%"]}
+          w={["90%", "90%", "80%", "70%"]}
           bg="shape.background"
           borderRadius="md"
           spacing={4}
           px="5"
           pt="6"
           marginX="auto"
-          mt="24"
+          mt={{ base: 12, lg: 24 }}
           shadow="base"
           pb="5"
         >
@@ -209,7 +209,7 @@ const Terms: NextPage = () => {
             <Text>
               If you have any questions or suggestions about my Terms and
               Conditions, do not hesitate to contact me at
-              easy.resume.hefesto.apps@gmail.com.
+              easy.resume.hefesto.apps@gmail.com
             </Text>
 
             <Text>

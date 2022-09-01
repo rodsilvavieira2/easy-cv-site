@@ -11,9 +11,9 @@ export const SectionDivider: React.FC<SectionDividerProps> = ({
 }) => {
   return (
     <Center minH="8.75rem">
-      <Stack spacing={2} alignItems="center">
+      <Stack w="full" spacing={2} alignItems="center">
         <Heading
-          fontSize="lg"
+          fontSize={{ base: "md", lg: "lg" }}
           as="h3"
           color="text.secondary"
           fontWeight="medium"
@@ -23,7 +23,14 @@ export const SectionDivider: React.FC<SectionDividerProps> = ({
           {title}
         </Heading>
 
-        <Heading as="h4" color="text.title" fontSize="3xl" textAlign="center">
+        <Heading
+          as="h4"
+          maxW={{ base: "70%", lg: "50%" }}
+          w="full"
+          color="text.title"
+          fontSize={{ base: "2xl", lg: "3xl" }}
+          textAlign="center"
+        >
           {text}
         </Heading>
       </Stack>

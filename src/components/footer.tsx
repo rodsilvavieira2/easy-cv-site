@@ -75,10 +75,10 @@ const NavFooter: React.FC<NavFooterProps> = ({ links, title }) => {
 
 export const Footer: React.FC = () => {
   return (
-    <Flex bg="shape.gradient" as="footer" h="27rem" py="10">
+    <Flex bg="shape.gradient" as="footer" minH="30rem" py="16">
       <Flex
         w="full"
-        maxW="95%"
+        maxW="90%"
         mx="auto"
         flex={1}
         flexDir="column"
@@ -115,6 +115,10 @@ export const Footer: React.FC = () => {
                 label: "privacy",
               },
               {
+                href: "/contact-us",
+                label: "Contact us",
+              },
+              {
                 href: "https://www.linkedin.com/in/rodrigo-silva-27a7a01b2/",
                 label: "developer",
                 isInternal: false,
@@ -128,12 +132,13 @@ export const Footer: React.FC = () => {
           borderTop="1px solid #ffffff"
           pt="5"
           alignItems="center"
+          flexWrap="wrap"
         >
-          <Box w="10rem" h="2.5rem" position="relative">
+          <Box w="8.5rem" h="2.2rem" position="relative">
             <Image src="/hefesto-logo.png" alt="hefesto" layout="fill" />
           </Box>
 
-          <Text color="text.primary" fontSize="small">
+          <Text my="2" color="text.primary" fontSize="small">
             © 2022 Easy Resume. All rights reserved.
           </Text>
         </Flex>

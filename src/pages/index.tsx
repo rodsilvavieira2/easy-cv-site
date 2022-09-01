@@ -21,6 +21,7 @@ import {
   SimpleGrid,
   Stack,
   Text,
+  useBreakpointValue,
   useToken,
 } from "@chakra-ui/react";
 import { BenefitCard, PriceCard, SectionDivider } from "@components";
@@ -34,17 +35,22 @@ const WelcomeSection: React.FC = () => {
       w="80%"
       mt="9"
       as="section"
+      h={{ base: "calc(100vh - 6.25rem)", lg: "auto" }}
     >
-      <Stack maxW="45%" spacing={8}>
+      <Stack maxW={{ base: "100%", lg: "40%" }} spacing={8}>
         <Stack spacing={4}>
-          <Heading as="h1" color="text.title" fontSize="4xl">
+          <Heading
+            as="h1"
+            color="text.title"
+            fontSize={{ base: "3xl", lg: "4xl" }}
+          >
             Make resumes quickly and easily With Easy Resume
           </Heading>
 
           <Heading
             as="h2"
             color="text.secondary"
-            fontSize="lg"
+            fontSize={{ base: "md", lg: "lg" }}
             fontWeight="medium"
           >
             with easy resume you can create resumes that can expose all your
@@ -57,7 +63,7 @@ const WelcomeSection: React.FC = () => {
           bg="primary.500"
           _focus={{ bg: "primary.400" }}
           _active={{ bg: "primary.400" }}
-          leftIcon={<DownloadSimple size={32} />}
+          leftIcon={<DownloadSimple size={28} />}
           size="lg"
           alignSelf="flex-start"
         >
@@ -65,7 +71,7 @@ const WelcomeSection: React.FC = () => {
         </Button>
       </Stack>
 
-      <Flex bg="amber.100">
+      <Flex bg="amber.100" display={{ base: "none", lg: "flex" }}>
         <DeviceFrame />
       </Flex>
     </Flex>
@@ -75,33 +81,38 @@ const WelcomeSection: React.FC = () => {
 const BenefitsSection: React.FC = () => {
   const [secondary500] = useToken("colors", ["secondary.500"]);
 
+  const iconSize = useBreakpointValue({
+    base: 38,
+    lg: 44,
+  });
+
   const benefits = withId([
     {
-      icon: <Palette size={44} color={secondary500} />,
+      icon: <Palette size={iconSize} color={secondary500} />,
       title: "Colors",
       description: "Get access to a wide range of colors.",
     },
     {
-      icon: <Layout size={44} color={secondary500} />,
+      icon: <Layout size={iconSize} color={secondary500} />,
       title: "Themes",
       description: "Have a wide range of themes that meet your needs.",
     },
     {
-      icon: <TextAa size={44} color={secondary500} />,
+      icon: <TextAa size={iconSize} color={secondary500} />,
       title: "Font Size",
       description: "Control the font size.",
     },
     {
-      icon: <ArrowsOutLineVertical size={44} color={secondary500} />,
+      icon: <ArrowsOutLineVertical size={iconSize} color={secondary500} />,
       title: "Line Height",
       description: "Get access to a wide range of colors.",
     },
   ]);
 
   return (
-    <Flex as="section">
+    <Flex as="section" id="features">
       <SimpleGrid
-        minChildWidth="6.5rem"
+        minChildWidth="12rem"
         spacing={6}
         mx="auto"
         maxW="80%"
@@ -156,11 +167,20 @@ const PriceTableSection: React.FC = () => {
   ]);
 
   return (
-    <HStack as="section" justifyContent="center" spacing="5">
-      {cards.map(({ id, ...props }) => (
-        <PriceCard key={id} {...props} />
-      ))}
-    </HStack>
+    <Flex>
+      <SimpleGrid
+        as="section"
+        id="pricing"
+        minChildWidth="18.75rem"
+        spacing="5"
+        maxW={{ base: "75%", lg: "80%" }}
+        mx="auto"
+      >
+        {cards.map(({ id, ...props }) => (
+          <PriceCard key={id} {...props} />
+        ))}
+      </SimpleGrid>
+    </Flex>
   );
 };
 
@@ -177,9 +197,13 @@ export const GetTheAppNowSection: React.FC = () => {
           mx="auto"
           alignItems="center"
         >
-          <DeviceFrameWithoutShapes position="absolute" top="-38%" />
+          <DeviceFrameWithoutShapes
+            display={{ base: "none", lg: "block" }}
+            position="absolute"
+            top="-38%"
+          />
 
-          <Stack ml="72" spacing={"5"}>
+          <Stack ml={{ base: 0, lg: 72 }} spacing={"5"}>
             <Heading color="text.primary">Get the app now!</Heading>
 
             <Link
@@ -189,6 +213,7 @@ export const GetTheAppNowSection: React.FC = () => {
               border={`2px solid ${secondary500}`}
               borderRadius="md"
               alignSelf="flex-start"
+              _hover={{ textDecoration: "none" }}
             >
               <AndroidLogo size={32} color={secondary500} />
 

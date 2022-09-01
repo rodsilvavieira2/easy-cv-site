@@ -26,26 +26,39 @@ export const PriceCard: React.FC<PriceCardProps> = ({
   amount,
 }) => {
   return (
-    <Stack spacing={2} px="7" py="12" borderRadius="md" shadow="lg">
+    <Stack
+      spacing={6}
+      minH="23.125rem"
+      px="7"
+      py="16"
+      borderRadius="md"
+      shadow="2xl"
+    >
+      <Text
+        textTransform="capitalize"
+        fontSize="2xl"
+        fontWeight="bold"
+        color="gray.800"
+      >
+        {title}
+      </Text>
+
       <Flex alignItems="center">
         <Text
-          lineHeight="1.1"
+          lineHeight="1"
           fontWeight="bold"
-          fontSize="3xl"
+          fontSize="4xl"
           color="text.secondary"
         >
           {amount}
         </Text>
         <Text alignSelf="flex-end" fontWeight="semibold" color="gray.700">
+          {" "}
           /{period}
         </Text>
       </Flex>
 
       <Box>
-        <Text fontSize="2xl" fontWeight="bold" color="gray.800">
-          {title}
-        </Text>
-
         <Text color="text.secondary" fontWeight="medium">
           {description}
         </Text>

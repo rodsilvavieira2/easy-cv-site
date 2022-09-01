@@ -1,42 +1,105 @@
 import Image from "next/image";
 import Link from "next/link";
+import { List } from "phosphor-react";
 import React from "react";
 
-import { Box, Flex, HStack, Link as LinkChakra } from "@chakra-ui/react";
+import {
+  Flex,
+  HStack,
+  IconButton,
+  Link as LinkChakra,
+  useBreakpointValue,
+  useToken,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+} from "@chakra-ui/react";
+import { withId } from "@helpers";
 
 export const BrandLogo: React.FC = () => {
   return (
-    <Box h="4rem" w="12.75rem" position="relative">
-      <Image src="/logo-light.svg" alt="easy resume" layout="fill" />
-    </Box>
+    <Link href="/" passHref>
+      <LinkChakra
+        h={{ base: "3rem", lg: "4rem" }}
+        w={{ base: "9.5rem", lg: "12.75rem" }}
+        position="relative"
+      >
+        <Image src="/logo-light.svg" alt="easy resume" layout="fill" />
+      </LinkChakra>
+    </Link>
   );
 };
 
 export const Nav: React.FC = () => {
-  const links = [
+  const isMobile = useBreakpointValue({
+    base: true,
+    lg: false,
+  });
+
+  const [secondary500] = useToken("colors", ["secondary.500"]);
+
+  const links = withId([
     {
       label: "Home",
       link: "/",
     },
     {
       label: "Features",
-      link: "/",
+      link: "/#features",
     },
     {
       label: "Pricing",
-      link: "/",
+      link: "/#pricing",
     },
     {
-      label: "Contact",
-      link: "/",
+      label: "Contact us",
+      link: "/contact-us",
     },
-  ];
+  ]);
+
+  if (isMobile) {
+    return (
+      <Menu>
+        <MenuButton
+          as={IconButton}
+          bg="primary.500"
+          aria-label="nav menu"
+          _hover={{ bg: "primary.400" }}
+          _focus={{ bg: "primary.400" }}
+          _active={{ bg: "primary.400" }}
+          icon={<List color={secondary500} weight="bold" size={22} />}
+        />
+
+        <MenuList>
+          {links.map(({ id, label, link }) => (
+            <Link key={id} passHref href={link}>
+              <MenuItem
+                as={LinkChakra}
+                textTransform="capitalize"
+                fontSize={{ base: "md", lg: "lg" }}
+                fontWeight="bold"
+                color="text.secondary"
+              >
+                {label}
+              </MenuItem>
+            </Link>
+          ))}
+        </MenuList>
+      </Menu>
+    );
+  }
 
   return (
-    <HStack spacing={3}>
+    <HStack spacing={5}>
       {links.map(({ label, link }) => (
         <Link key={label} passHref href={link}>
-          <LinkChakra fontSize="lg" fontWeight="bold" color="text.secondary">
+          <LinkChakra
+            textTransform="capitalize"
+            fontSize="lg"
+            fontWeight="bold"
+            color="text.secondary"
+          >
             {label}
           </LinkChakra>
         </Link>
@@ -59,7 +122,12 @@ export const Header: React.FC = () => {
       right={0}
       shadow="base"
     >
-      <Flex px="50px" w="full" justifyContent="space-between">
+      <Flex
+        px="50px"
+        w="full"
+        justifyContent="space-between"
+        alignItems="center"
+      >
         <BrandLogo />
 
         <Nav />

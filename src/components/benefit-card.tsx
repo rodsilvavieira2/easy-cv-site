@@ -13,10 +13,11 @@ export const BenefitCard: React.FC<BenefitCardProps> = ({
 }) => {
   return (
     <HStack
-      spacing={2}
+      spacing={3}
       alignItems="center"
       bg="shape.gradient"
       borderRadius="base"
+      minH="28"
       px="4"
       py="2"
       boxShadow="inset 0 0 3px #ffffff"
@@ -24,11 +25,17 @@ export const BenefitCard: React.FC<BenefitCardProps> = ({
       <Box flexShrink={0}>{icon}</Box>
 
       <Box color="text.primary">
-        <Text textTransform="capitalize" fontWeight="bold" fontSize="2xl">
+        <Text
+          textTransform="capitalize"
+          fontWeight="bold"
+          fontSize={{ base: "lg", lg: "2xl" }}
+        >
           {title}
         </Text>
 
-        <Text fontWeight="medium">{description}</Text>
+        <Text fontWeight="medium" fontSize={{ base: "sm", lg: "md" }}>
+          {description}
+        </Text>
       </Box>
     </HStack>
   );

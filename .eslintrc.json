@@ -63,6 +63,7 @@
             }
         ],
         "import/no-extraneous-dependencies": "off",
-        "@typescript-eslint/no-explicit-any": "off"
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/strict-boolean-expressions": "off"
     }
 }
