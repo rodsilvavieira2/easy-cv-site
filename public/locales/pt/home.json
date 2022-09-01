@@ -1,0 +1,35 @@
+{
+  "title":"Currículo Fácil",
+  "welcomeSection": {
+    "h1": "Faça currículos de forma rápida e fácil Com o Currículo Fácil ",
+    "h2": "Com o Currículo Fácil você pode criar currículos que podem expor todas as suas qualidades de forma elegante e moderna",
+    "button": "baixar"
+  },
+  "benefitsSection": {
+    "cards": {
+      "colors": {
+        "title": "cores",
+        "description": "Tenha acesso a uma ampla gama de cores."
+      },
+      "theme": {
+        "title": "Temas",
+        "description": "Tenha uma ampla gama de temas que atendam às suas necessidades."
+      },
+      "fontSize": {
+        "title": "Tamanho da fonte",
+        "description": "Controle o tamanho da fonte."
+      },
+      "lineHeight": {
+        "title": "Altura da linha",
+        "description": "Controle a altura da linha."
+      }
+    }
+  },
+  "getTheAppNowSection": {
+    "h2":"Baixe o aplicativo agora!",
+    "button": {
+      "text1": "baixe aqui",
+      "text2": "Google Play"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "title": "Termos de uso | Easy Resume",
+  "h1": "Termos de uso",
+  "general": {
+    "h2": "Informação geral",
+    "p1": "Ao baixar ou usar o aplicativo, esses termos se aplicarão automaticamente a você portanto, certifique-se de lê-los atentamente antes de usar o aplicativo. Você não tem permissão para copiar ou modificar o aplicativo, qualquer parte do aplicativo ou nossas marcas registradas de forma alguma. Você não tem permissão para tentar extrair o código-fonte do aplicativo e também não deve tentar traduzir o aplicativo para outros idiomas ou fazer versões derivadas. O aplicativo em si, e todas as marcas registradas, direitos autorais, direitos de banco de dados e outros direitos de propriedade intelectual relacionados a ele, ainda pertencem ao Hefesto App.",
+    "p2": "A Hefesto App's está empenhada em garantir que o aplicativo seja o mais útil e eficiente possível. Por esse motivo, nos reservamos o direito de fazer alterações no aplicativo ou cobrar por seus serviços, a qualquer momento e por qualquer motivo. Nunca cobraremos pelo aplicativo ou seus serviços sem deixar bem claro para você exatamente pelo que está pagando."
+  },
+  "thirdParty": {
+    "h2": "O aplicativo usa serviços de terceiros que podem coletar informações usadas para identificá-lo.",
+    "p": "Links para Termos e Condições de provedores de serviços terceirizados usados pelo aplicativo"
+  },
+  "changes": {
+    "h2": "Alterações a estes Termos e Condições",
+    "p1": "Posso atualizar nossos Termos e Condições de tempos em tempos. Assim, recomendamos que você revise esta página periodicamente para quaisquer alterações. Vou notificá-lo sobre quaisquer alterações publicando os novos Termos e Condições nesta página.",
+    "p2": "Estes termos e condições estão em vigor a partir de 31/08/2022"
+  },
+  "contact": {
+    "h2": "Contate-nos",
+    "p1": "Se você tiver alguma dúvida ou sugestão sobre meus Termos e Condições, não hesite em me contatar em easy.resume.hefesto.apps@gmail.com",
+    "p2": "Esta página de Termos e Condições foi gerada por ",
+    "p3": "App Privacy Policy Generator" 
+  }
+}

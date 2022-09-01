@@ -1,0 +1,18 @@
+{
+  "app": {
+    "title": "Currículo fácil",
+    "links": {
+      "about": "sobre",
+      "what": "o que nos oferecemos ?"
+    }
+  },
+  "more": {
+    "title": "mais",
+    "links": {
+      "terms": "termos",
+      "privacy": "privacidade",
+      "contact": "contate-nos",
+      "developer": "desenvolvedor"
+    }
+  }
+}
