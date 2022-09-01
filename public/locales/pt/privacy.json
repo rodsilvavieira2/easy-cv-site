@@ -2,7 +2,7 @@
   "title": "Política de Privacidade | Currículo Fácil",
   "h1": "Política de Privacidade",
   "lastUpdate": "Última atualização em",
-  "generalInfo": {
+  "general": {
     "h2": "Informações gerais",
     "p": "Rodrigo Silva criou o aplicativo Easy Resume como um aplicativo gratuito. Este SERVIÇO é fornecido pelo Hefesto App,s sem custo e destina-se ao uso como está. Esta página é usada para informar os visitantes sobre minhas políticas de coleta, uso e divulgação de Informações Pessoais se alguém decidir usar meu Serviço. Se você optar por usar meu Serviço, concorda com a coleta e uso de informações em relação a esta política. As Informações Pessoais que eu coleto são usadas para fornecer e melhorar o Serviço. Não usarei ou compartilharei suas informações com ninguém, exceto conforme descrito nesta Política de Privacidade. Os termos utilizados nesta Política de Privacidade têm os mesmos significados que em nossos Termos e Condições, que podem ser acessados no Currículo Fácil, salvo definição em contrário nesta Política de Privacidade."
   },
@@ -13,7 +13,7 @@
       "thirdParty": "serviços terceirizados",
       "logData": "dados de registro",
       "cookies": "cookies",
-      "provides": "provedores de serviço",
+      "providers": "provedores de serviço",
       "others": "links para outros sites",
       "changes": "Alterações",
       "children": "privacidade das crianças",

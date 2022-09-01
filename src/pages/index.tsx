@@ -1,5 +1,7 @@
 import { withId } from "helpers";
+import { useI18nToken } from "hooks";
 import type { GetStaticProps, NextPage } from "next";
+import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import {
@@ -28,6 +30,12 @@ import {
 import { BenefitCard, PriceCard, SectionDivider } from "@components";
 
 const WelcomeSection: React.FC = () => {
+  const [welcomeH1, welcomeH2, welcomeButton] = useI18nToken("home", [
+    "welcomeSection.h1",
+    "welcomeSection.h2",
+    "welcomeSection.button",
+  ]);
+
   return (
     <Flex
       justifyContent="space-between"
@@ -45,7 +53,7 @@ const WelcomeSection: React.FC = () => {
             color="text.title"
             fontSize={{ base: "3xl", lg: "4xl" }}
           >
-            Make resumes quickly and easily With Easy Resume
+            {welcomeH1}
           </Heading>
 
           <Heading
@@ -54,8 +62,7 @@ const WelcomeSection: React.FC = () => {
             fontSize={{ base: "md", lg: "lg" }}
             fontWeight="medium"
           >
-            with easy resume you can create resumes that can expose all your
-            qualities in an elegant and modern way
+            {welcomeH2}
           </Heading>
         </Stack>
 
@@ -68,7 +75,7 @@ const WelcomeSection: React.FC = () => {
           size="lg"
           alignSelf="flex-start"
         >
-          Download
+          {welcomeButton}
         </Button>
       </Stack>
 
@@ -82,6 +89,26 @@ const WelcomeSection: React.FC = () => {
 const BenefitsSection: React.FC = () => {
   const [secondary500] = useToken("colors", ["secondary.500"]);
 
+  const [
+    colorTitle,
+    colorDesc,
+    themeTitle,
+    themeDesc,
+    fontSizeTitle,
+    fontSizeDesc,
+    lineHeightTitle,
+    lineHeightDesc,
+  ] = useI18nToken("home", [
+    "benefitsSection.cards.colors.title",
+    "benefitsSection.cards.colors.description",
+    "benefitsSection.cards.theme.title",
+    "benefitsSection.cards.theme.description",
+    "benefitsSection.cards.fontSize.title",
+    "benefitsSection.cards.fontSize.description",
+    "benefitsSection.cards.lineHeight.title",
+    "benefitsSection.cards.lineHeight.description",
+  ]);
+
   const iconSize = useBreakpointValue({
     base: 38,
     lg: 44,
@@ -90,23 +117,23 @@ const BenefitsSection: React.FC = () => {
   const benefits = withId([
     {
       icon: <Palette size={iconSize} color={secondary500} />,
-      title: "Colors",
-      description: "Get access to a wide range of colors.",
+      title: colorTitle,
+      description: colorDesc,
     },
     {
       icon: <Layout size={iconSize} color={secondary500} />,
-      title: "Themes",
-      description: "Have a wide range of themes that meet your needs.",
+      title: themeTitle,
+      description: themeDesc,
     },
     {
       icon: <TextAa size={iconSize} color={secondary500} />,
-      title: "Font Size",
-      description: "Control the font size.",
+      title: fontSizeTitle,
+      description: fontSizeDesc,
     },
     {
       icon: <ArrowsOutLineVertical size={iconSize} color={secondary500} />,
-      title: "Line Height",
-      description: "Get access to a wide range of colors.",
+      title: lineHeightTitle,
+      description: lineHeightDesc,
     },
   ]);
 
@@ -188,6 +215,12 @@ const PriceTableSection: React.FC = () => {
 export const GetTheAppNowSection: React.FC = () => {
   const [secondary500] = useToken("colors", ["secondary.500"]);
 
+  const [h1, buttonText1, buttonText2] = useI18nToken("home", [
+    "getTheAppNowSection.h1",
+    "getTheAppNowSection.button.text1",
+    "getTheAppNowSection.button.text2",
+  ]);
+
   return (
     <Box as="section" py="44" mb="28 !important">
       <Flex minH="17rem" bg="shape.gradient">
@@ -205,7 +238,7 @@ export const GetTheAppNowSection: React.FC = () => {
           />
 
           <Stack ml={{ base: 0, lg: 72 }} spacing={"5"}>
-            <Heading color="text.primary">Get the app now!</Heading>
+            <Heading color="text.primary">{h1}</Heading>
 
             <Link
               py="2"
@@ -219,9 +252,9 @@ export const GetTheAppNowSection: React.FC = () => {
               <AndroidLogo size={32} color={secondary500} />
 
               <Box color="text.primary">
-                <Text fontSize="sm">Get it on</Text>
+                <Text fontSize="sm">{buttonText1}</Text>
 
-                <Text fontWeight="bold">Google play</Text>
+                <Text fontWeight="bold">{buttonText2}</Text>
               </Box>
             </Link>
           </Stack>

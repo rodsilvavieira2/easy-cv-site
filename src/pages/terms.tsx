@@ -1,3 +1,4 @@
+import { useI18nToken } from "hooks";
 import { GetStaticProps, NextPage } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
@@ -16,10 +17,46 @@ import {
 } from "@chakra-ui/react";
 
 const Terms: NextPage = () => {
+  const [
+    title,
+    h1,
+    lastUpdate,
+    generalH2,
+    generalP1,
+    generalP2,
+    generalP3,
+    thirdPartyH2,
+    thirdPartyP,
+    changesH2,
+    changesP1,
+    changesP2,
+    contactH2,
+    contactP1,
+    contactP2,
+    contactP3,
+  ] = useI18nToken("terms", [
+    "title",
+    "h1",
+    "lastUpdate",
+    "general.h2",
+    "general.p1",
+    "general.p2",
+    "general.p3",
+    "thirdParty.h2",
+    "thirdParty.p",
+    "changes.h2",
+    "changes.p1",
+    "changes.p2",
+    "contact.h2",
+    "contact.p1",
+    "contact.p2",
+    "contact.p3",
+  ]);
+
   return (
     <>
       <Head>
-        <title>Terms | Easy Resume</title>
+        <title>{title}</title>
       </Head>
 
       <Flex flex={1} bg="background.300" pb="32">
@@ -38,66 +75,33 @@ const Terms: NextPage = () => {
           <Stack spacing={6} as="section">
             <Center flexDir="column">
               <Heading as="h1" fontSize="5xl" fontWeight="light" pt="5" pb="12">
-                Terms of use
+                {h1}
               </Heading>
 
               <Divider w="75%" borderColor="border.300" mb="16" />
             </Center>
 
-            <Text as="time">Last updated on Aug 31, 2022.</Text>
+            <Text as="time">{lastUpdate}</Text>
 
             <Stack border="1px solid" px="4" py="6" borderRadius="md">
               <Heading as="h3" size="md">
-                General information
+                {generalH2}
               </Heading>
 
-              <Text>
-                By downloading or using the app, these terms will automatically
-                apply to you – you should make sure therefore that you read them
-                carefully before using the app. You’re not allowed to copy or
-                modify the app, any part of the app, or our trademarks in any
-                way. You’re not allowed to attempt to extract the source code of
-                the app, and you also shouldn’t try to translate the app into
-                other languages or make derivative versions. The app itself, and
-                all the trademarks, copyright, database rights, and other
-                intellectual property rights related to it, still belong to
-                Hefesto App´s.
-              </Text>
+              <Text>{generalP1}</Text>
 
-              <Text>
-                Hefesto App´s is committed to ensuring that the app is as useful
-                and efficient as possible. For that reason, we reserve the right
-                to make changes to the app or to charge for its services, at any
-                time and for any reason. We will never charge you for the app or
-                its services without making it very clear to you exactly what
-                you’re paying for.
-              </Text>
+              <Text>{generalP2}</Text>
 
-              <Text>
-                The Easy Resume app stores and processes personal data that you
-                have provided to us, to provide my Service. It’s your
-                responsibility to keep your phone and access to the app secure.
-                We therefore recommend that you do not jailbreak or root your
-                phone, which is the process of removing software restrictions
-                and limitations imposed by the official operating system of your
-                device. It could make your phone vulnerable to
-                malware/viruses/malicious programs, compromise your phone’s
-                security features and it could mean that the Easy Resume app
-                won’t work properly or at all.
-              </Text>
+              <Text>{generalP3}</Text>
             </Stack>
           </Stack>
 
           <Stack as="section" id="third-party-services">
             <Heading as="h3" size="md">
-              The app does use third-party services that may collect information
-              used to identify you.
+              {thirdPartyH2}
             </Heading>
 
-            <Text>
-              Link to Terms and Conditions of third-party service providers used
-              by the app
-            </Text>
+            <Text>{thirdPartyP}</Text>
 
             <UnorderedList pl="5">
               <ListItem>
@@ -143,39 +147,28 @@ const Terms: NextPage = () => {
 
           <Stack as="section" id="changes">
             <Heading as="h3" size="md">
-              Changes to This Terms and Conditions
+              {changesH2}
             </Heading>
 
-            <Text>
-              I may update our Terms and Conditions from time to time. Thus, you
-              are advised to review this page periodically for any changes. I
-              will notify you of any changes by posting the new Terms and
-              Conditions on this page.
-            </Text>
+            <Text>{changesP1}</Text>
 
-            <Text>
-              These terms and conditions are effective as of 2022-08-31
-            </Text>
+            <Text>{changesP2}</Text>
           </Stack>
 
           <Stack as="section" id="contact-us">
             <Heading as="h3" size="md">
-              Contact Us
+              {contactH2}
             </Heading>
 
-            <Text>
-              If you have any questions or suggestions about my Terms and
-              Conditions, do not hesitate to contact me at
-              easy.resume.hefesto.apps@gmail.com
-            </Text>
+            <Text>{contactP1}</Text>
 
             <Text>
-              This Terms and Conditions page was generated by{" "}
+              {contactP2}
               <Link
                 target="_blank"
                 href="https://app-privacy-policy-generator.nisrulz.com/"
               >
-                App Privacy Policy Generator
+                {contactP3}
               </Link>
             </Text>
           </Stack>

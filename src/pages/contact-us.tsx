@@ -1,3 +1,4 @@
+import { useI18nToken } from "hooks";
 import { GetStaticProps, NextPage } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
@@ -5,10 +6,15 @@ import Head from "next/head";
 import { Center, Flex, Heading, Link, Text } from "@chakra-ui/react";
 
 const ContactUs: NextPage = () => {
+  const [title, contactH2, contactP, emailH1, emailLink] = useI18nToken(
+    "contact",
+    ["title", "contact.h2", "contact.p", "email.h1", "email.link"]
+  );
+
   return (
     <>
       <Head>
-        <title>Contact Us | Easy Resume</title>
+        <title>{title}</title>
       </Head>
 
       <Center h="100vh" as="section">
@@ -19,15 +25,14 @@ const ContactUs: NextPage = () => {
           maxW="85%"
           flexWrap="wrap"
         >
-          <Heading fontSize={{ base: "6xl", lg: "7xl" }}>Contact us</Heading>
+          <Heading fontSize={{ base: "6xl", lg: "7xl" }}>{contactH2}</Heading>
 
           <Text
             mt={{ base: 5, lg: 0 }}
             maxW={{ base: "100%", lg: "46%" }}
             fontSize={{ base: "lg", lg: "2xl" }}
           >
-            Have questions? The quickest way to get in touch with us is using
-            the contact information below.
+            {contactP}
           </Text>
         </Flex>
       </Center>
@@ -40,7 +45,7 @@ const ContactUs: NextPage = () => {
           w="full"
           flexWrap="wrap"
         >
-          <Heading fontSize={{ base: "6xl", lg: "7xl" }}>Email</Heading>
+          <Heading fontSize={{ base: "6xl", lg: "7xl" }}>{emailH1}</Heading>
 
           <Link
             textDecoration="underline"
@@ -49,7 +54,7 @@ const ContactUs: NextPage = () => {
             fontSize={{ base: "lg", lg: "2xl" }}
             mt={{ base: 5, lg: 0 }}
           >
-            Send us a feedback using your email:
+            {emailLink}
           </Link>
         </Flex>
       </Center>

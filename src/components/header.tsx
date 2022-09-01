@@ -1,3 +1,4 @@
+import { useTranslation } from "next-i18next";
 import Image from "next/image";
 import Link from "next/link";
 import { List } from "phosphor-react";
@@ -39,21 +40,23 @@ export const Nav: React.FC = () => {
 
   const [secondary500] = useToken("colors", ["secondary.500"]);
 
+  const [t] = useTranslation("header");
+
   const links = withId([
     {
-      label: "Home",
+      tKey: "links.home",
       link: "/",
     },
     {
-      label: "Features",
+      tKey: "links.features",
       link: "/#features",
     },
     {
-      label: "Pricing",
+      tKey: "links.pricing",
       link: "/#pricing",
     },
     {
-      label: "Contact us",
+      tKey: "links.contact",
       link: "/contact-us",
     },
   ]);
@@ -72,7 +75,7 @@ export const Nav: React.FC = () => {
         />
 
         <MenuList>
-          {links.map(({ id, label, link }) => (
+          {links.map(({ id, tKey, link }) => (
             <Link key={id} passHref href={link}>
               <MenuItem
                 as={LinkChakra}
@@ -81,7 +84,7 @@ export const Nav: React.FC = () => {
                 fontWeight="bold"
                 color="text.secondary"
               >
-                {label}
+                {t(tKey)}
               </MenuItem>
             </Link>
           ))}
@@ -92,15 +95,15 @@ export const Nav: React.FC = () => {
 
   return (
     <HStack spacing={5}>
-      {links.map(({ label, link }) => (
-        <Link key={label} passHref href={link}>
+      {links.map(({ id, tKey, link }) => (
+        <Link key={id} passHref href={link}>
           <LinkChakra
             textTransform="capitalize"
             fontSize="lg"
             fontWeight="bold"
             color="text.secondary"
           >
-            {label}
+            {t(tKey)}
           </LinkChakra>
         </Link>
       ))}

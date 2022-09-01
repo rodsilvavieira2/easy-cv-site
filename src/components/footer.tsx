@@ -1,4 +1,5 @@
 import { withId } from "helpers";
+import { useI18nToken } from "hooks";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -74,6 +75,18 @@ const NavFooter: React.FC<NavFooterProps> = ({ links, title }) => {
 };
 
 export const Footer: React.FC = () => {
+  const [appTitle, about, what, moreTitle, terms, privacy, contact, developer] =
+    useI18nToken("footer", [
+      "app.title",
+      "app.links.about",
+      "app.links.what",
+      "more.title",
+      "more.links.terms",
+      "more.links.privacy",
+      "more.links.contact",
+      "more.links.developer",
+    ]);
+
   return (
     <Flex bg="shape.gradient" as="footer" minH="30rem" py="16">
       <Flex
@@ -86,37 +99,37 @@ export const Footer: React.FC = () => {
       >
         <HStack spacing="28" alignItems="start">
           <NavFooter
-            title="easy resume"
+            title={appTitle}
             links={[
               {
                 href: "/about",
-                label: "about",
+                label: about,
               },
               {
                 href: "/what-we-offer",
-                label: "what we offer",
+                label: what,
               },
             ]}
           />
 
           <NavFooter
-            title="more"
+            title={moreTitle}
             links={[
               {
                 href: "/terms",
-                label: "terms",
+                label: terms,
               },
               {
                 href: "/privacy",
-                label: "privacy",
+                label: privacy,
               },
               {
                 href: "/contact-us",
-                label: "Contact us",
+                label: contact,
               },
               {
                 href: "https://www.linkedin.com/in/rodrigo-silva-27a7a01b2/",
-                label: "developer",
+                label: developer,
                 isInternal: false,
               },
             ]}
