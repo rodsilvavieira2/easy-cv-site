@@ -1,5 +1,6 @@
 import { withId } from "helpers";
-import type { NextPage } from "next";
+import type { GetStaticProps, NextPage } from "next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import {
   AndroidLogo,
@@ -256,5 +257,11 @@ const Home: NextPage = () => {
     </>
   );
 };
+
+export const getStaticProps: GetStaticProps = async ({ locale = "en" }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ["home", "footer", "header"])),
+  },
+});
 
 export default Home;

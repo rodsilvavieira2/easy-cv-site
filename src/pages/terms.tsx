@@ -1,4 +1,5 @@
-import { NextPage } from "next";
+import { GetStaticProps, NextPage } from "next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import Link from "next/link";
 
@@ -183,5 +184,11 @@ const Terms: NextPage = () => {
     </>
   );
 };
+
+export const getStaticProps: GetStaticProps = async ({ locale = "en" }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ["terms", "footer", "header"])),
+  },
+});
 
 export default Terms;

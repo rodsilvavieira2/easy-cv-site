@@ -1,4 +1,5 @@
-import { NextPage } from "next";
+import { GetStaticProps, NextPage } from "next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 
 import { Center, Flex, Heading, Link, Text } from "@chakra-ui/react";
@@ -55,5 +56,11 @@ const ContactUs: NextPage = () => {
     </>
   );
 };
+
+export const getStaticProps: GetStaticProps = async ({ locale = "en" }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ["contact", "footer", "header"])),
+  },
+});
 
 export default ContactUs;
