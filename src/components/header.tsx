@@ -1,6 +1,7 @@
 import { useTranslation } from "next-i18next";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { List } from "phosphor-react";
 import React from "react";
 
@@ -19,6 +20,13 @@ import {
 import { withId } from "@helpers";
 
 export const BrandLogo: React.FC = () => {
+  const { locale } = useRouter();
+
+  const logoLocale = {
+    en: "/logo-light.svg",
+    pt: "/logo-light-pt.svg",
+  };
+
   return (
     <Link href="/" passHref>
       <LinkChakra
@@ -26,7 +34,11 @@ export const BrandLogo: React.FC = () => {
         w={{ base: "9.5rem", lg: "12.75rem" }}
         position="relative"
       >
-        <Image src="/logo-light.svg" alt="easy resume" layout="fill" />
+        <Image
+          src={logoLocale[locale as "en" | "pt"]}
+          alt="easy resume"
+          layout="fill"
+        />
       </LinkChakra>
     </Link>
   );
