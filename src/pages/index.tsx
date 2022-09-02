@@ -3,6 +3,7 @@ import { useI18nToken } from "hooks";
 import type { GetStaticProps, NextPage } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import {
   AndroidLogo,
   DownloadSimple,
@@ -27,6 +28,7 @@ import {
   useToken,
 } from "@chakra-ui/react";
 import { BenefitCard, PriceCard, SectionDivider } from "@components";
+import { prices } from "@config";
 
 const WelcomeSection: React.FC = () => {
   const [welcomeH1, welcomeH2, welcomeButton] = useI18nToken("home", [
@@ -154,42 +156,59 @@ const BenefitsSection: React.FC = () => {
 };
 
 const PriceTableSection: React.FC = () => {
+  const { locale = "en" } = useRouter();
+
+  const [
+    fontSize,
+    lineHeight,
+    template,
+    color,
+    description,
+    monthPeriod,
+    monthTitle,
+    weekPeriod,
+    weekTitle,
+    oneTimePeriod,
+    oneTimeTitle,
+  ] = useI18nToken("common", [
+    "benefits.fontSize",
+    "benefits.lineHeight",
+    "benefits.template",
+    "benefits.color",
+    "description",
+    "month.period",
+    "month.title",
+    "week.period",
+    "week.title",
+    "oneTime.period",
+    "oneTime.title",
+  ]);
+
+  const currentLocale = locale as "en" | "pt";
+
+  const benefits = [fontSize, lineHeight, template, color];
+
   const cards = withId([
     {
-      amount: "$22.22",
-      benefits: [
-        "change the font size",
-        "change the line height",
-        "change the template",
-        "change the color",
-      ],
-      description: "Unleash the power of automation",
-      period: "month",
-      title: "monthly",
+      amount: prices["1-week"][currentLocale].amount,
+      benefits,
+      description,
+      period: weekPeriod,
+      title: weekTitle,
     },
     {
-      amount: "$22.22",
-      benefits: [
-        "change the font size",
-        "change the line height",
-        "change the template",
-        "change the color",
-      ],
-      description: "Unleash the power of automation",
-      period: "month",
-      title: "monthly",
+      amount: prices["1-month"][currentLocale].amount,
+      benefits,
+      description,
+      period: monthPeriod,
+      title: monthTitle,
     },
     {
-      amount: "$22.22",
-      benefits: [
-        "change the font size",
-        "change the line height",
-        "change the template",
-        "change the color",
-      ],
-      description: "Unleash the power of automation",
-      period: "month",
-      title: "monthly",
+      amount: prices["one-time"][currentLocale].amount,
+      benefits,
+      description,
+      period: oneTimePeriod,
+      title: oneTimeTitle,
     },
   ]);
 
@@ -306,7 +325,12 @@ const Home: NextPage = () => {
 
 export const getStaticProps: GetStaticProps = async ({ locale = "en" }) => ({
   props: {
-    ...(await serverSideTranslations(locale, ["home", "footer", "header"])),
+    ...(await serverSideTranslations(locale, [
+      "home",
+      "footer",
+      "header",
+      "common",
+    ])),
   },
 });
 

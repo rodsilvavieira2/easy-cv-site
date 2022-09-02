@@ -1,1 +1,21 @@
-{}
+{
+  "benefits": {
+    "fontSize": "change the font size",
+    "lineHeight": "change the line heigh",
+    "template": "change the template",
+    "color": "change the color"
+  },
+  "description": "Unleash the power of automation",
+  "month": {
+    "period": "month",
+    "title": "monthly"
+  },
+  "week": {
+    "period": "week",
+    "title": "weekly"
+  },
+  "oneTime": {
+    "period": "One-time",
+    "title": "One-time payment"
+  }
+}

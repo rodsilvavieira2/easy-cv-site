@@ -1,1 +1,21 @@
-{}
+{
+  "benefits": {
+    "fontSize": "altere o tamanho da fonte",
+    "lineHeight": "altere a altura da linha",
+    "template": "altere o modelo",
+    "color": "mude a cor"
+  },
+  "description": "liberte o poder da automação",
+  "month": {
+    "period": "mês",
+    "title": "mensal"
+  },
+  "week": {
+    "period": "semana",
+    "title": "semanal"    
+  },
+  "oneTime": {
+    "period": "Único",
+    "title": "Pagamento Único"
+  }
+}
