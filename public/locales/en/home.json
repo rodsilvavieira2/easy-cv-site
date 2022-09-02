@@ -5,6 +5,14 @@
     "h2": "With easy resume you can create resumes that can expose all your qualities in an elegant and modern way",
     "button": "download"
   },
+  "featuresDivider": {
+    "title": "Amazing Features",
+    "text": "Some of the best features you find in one application"
+  },
+  "priceDivider": {
+    "title": "Price Table",
+    "text": "Check our prices"
+  },
   "benefitsSection": {
     "cards": {
       "colors": {
@@ -29,7 +37,7 @@
     "h2":"Get the app now!",
     "button": {
       "text1": "get it on",
-      "text2": "googlePlay"
+      "text2": "Google Play"
     }
   }
 }

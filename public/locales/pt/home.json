@@ -5,6 +5,14 @@
     "h2": "Com o Currículo Fácil você pode criar currículos que podem expor todas as suas qualidades de forma elegante e moderna",
     "button": "baixar"
   },
+  "featuresDivider": {
+    "title": "Recursos incríveis",
+    "text": "Alguns dos melhores recursos que você encontra em um aplicativo"
+  },
+  "priceDivider": {
+    "title": "Tabela de preços",
+    "text": "Consulte nossos preços"
+  },
   "benefitsSection": {
     "cards": {
       "colors": {

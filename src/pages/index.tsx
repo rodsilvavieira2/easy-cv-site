@@ -1,7 +1,6 @@
 import { withId } from "helpers";
 import { useI18nToken } from "hooks";
 import type { GetStaticProps, NextPage } from "next";
-import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import {
@@ -216,7 +215,7 @@ export const GetTheAppNowSection: React.FC = () => {
   const [secondary500] = useToken("colors", ["secondary.500"]);
 
   const [h1, buttonText1, buttonText2] = useI18nToken("home", [
-    "getTheAppNowSection.h1",
+    "getTheAppNowSection.h2",
     "getTheAppNowSection.button.text1",
     "getTheAppNowSection.button.text2",
   ]);
@@ -265,23 +264,37 @@ export const GetTheAppNowSection: React.FC = () => {
 };
 
 const Home: NextPage = () => {
+  const [
+    title,
+    featuresDividerTitle,
+    featuresDividerDivider,
+    priceDividerTitle,
+    priceDividerText,
+  ] = useI18nToken("home", [
+    "title",
+    "featuresDivider.title",
+    "featuresDivider.text",
+    "priceDivider.title",
+    "priceDivider.text",
+  ]);
+
   return (
     <>
       <Head>
-        <title>Easy Resume</title>
+        <title>{title}</title>
       </Head>
 
       <Stack spacing={9} as="main">
         <WelcomeSection />
 
         <SectionDivider
-          title="Amazing features"
-          text="Some of the best features you find in one application"
+          title={featuresDividerTitle}
+          text={featuresDividerDivider}
         />
 
         <BenefitsSection />
 
-        <SectionDivider title="Price table" text="Check our prices" />
+        <SectionDivider title={priceDividerTitle} text={priceDividerText} />
 
         <PriceTableSection />
 
