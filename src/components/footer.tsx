@@ -136,12 +136,15 @@ export const Footer: React.FC = () => {
           />
         </HStack>
 
-        <Flex
+        <ChakraLink
+          display="flex"
           justifyContent="space-between"
           borderTop="1px solid #ffffff"
           pt="5"
           alignItems="center"
           flexWrap="wrap"
+          isExternal
+          href="https://www.linkedin.com/in/rodrigo-silva-27a7a01b2/"
         >
           <Box w="8.5rem" h="2.2rem" position="relative">
             <Image src="/hefesto-logo.png" alt="hefesto" layout="fill" />
@@ -150,7 +153,7 @@ export const Footer: React.FC = () => {
           <Text my="2" color="text.primary" fontSize="small">
             © 2022 Easy Resume. All rights reserved.
           </Text>
-        </Flex>
+        </ChakraLink>
       </Flex>
     </Flex>
   );

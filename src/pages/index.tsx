@@ -68,13 +68,18 @@ const WelcomeSection: React.FC = () => {
         </Stack>
 
         <Button
+          as={Link}
+          href="https://play.google.com/store/apps/details?id=com.easycv"
+          isExternal
           color="text.primary"
           bg="primary.500"
           _focus={{ bg: "primary.400" }}
           _active={{ bg: "primary.400" }}
+          _hover={{ bg: "primary.400" }}
           leftIcon={<DownloadSimple size={28} />}
           size="lg"
           alignSelf="flex-start"
+          textTransform="capitalize"
         >
           {welcomeButton}
         </Button>
@@ -258,14 +263,16 @@ export const GetTheAppNowSection: React.FC = () => {
           <Stack ml={{ base: 0, lg: 72 }} spacing={"5"}>
             <Heading color="text.primary">{h1}</Heading>
 
-            <Link
+            <HStack
               py="2"
               px="3"
-              as={HStack}
+              as={Link}
               border={`2px solid ${secondary500}`}
               borderRadius="md"
               alignSelf="flex-start"
               _hover={{ textDecoration: "none" }}
+              href="https://play.google.com/store/apps/details?id=com.easycv"
+              isExternal
             >
               <AndroidLogo size={32} color={secondary500} />
 
@@ -274,7 +281,7 @@ export const GetTheAppNowSection: React.FC = () => {
 
                 <Text fontWeight="bold">{buttonText2}</Text>
               </Box>
-            </Link>
+            </HStack>
           </Stack>
         </Flex>
       </Flex>
